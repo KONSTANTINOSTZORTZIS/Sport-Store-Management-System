@@ -1,4 +1,10 @@
-# Requirements for Sport Store Management System
-# Built-in libraries used: tkinter, sqlite3, os
-# No external pip installations required.
+# Αυτή η εφαρμογή χρησιμοποιεί μόνο τις ενσωματωμένες βιβλιοθήκες της Python.
+# Δεν απαιτείται η εγκατάσταση εξωτερικών πακέτων μέσω pip.
+
+# Προδιαγραφές:
 python>=3.10
+
+# Built-in modules used:
+# - tkinter (GUI)
+# - sqlite3 (Database)
+# - os (System paths)
