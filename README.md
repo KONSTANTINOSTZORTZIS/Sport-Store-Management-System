@@ -14,5 +14,5 @@ Sport Store Management System | A standalone desktop application built with Pyth
 ## Εγκατάσταση
 1. Εγκαταστήστε την Python 3.
 2. Τρέξτε το αρχείο "app.py".
->>>>>>> 436897e (Final project files submission)
+
 
