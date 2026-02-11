@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # Sport-Store-Management-System
 Sport Store Management System | A standalone desktop application built with Python and Tkinter, featuring a local SQLite database for inventory and customer relationship management.
-=======
+
 # Σύστημα Διαχείρισης Αθλητικού Καταστήματος (Database Project 2025-2026)
 
 Αυτή η εφαρμογή είναι μια stand-alone desktop εφαρμογή σε Python που διαχειρίζεται μια βάση δεδομένων SQLite για ένα αθλητικό κατάστημα.
@@ -13,5 +13,6 @@ Sport Store Management System | A standalone desktop application built with Pyth
 
 ## Εγκατάσταση
 1. Εγκαταστήστε την Python 3.
-2. Τρέξτε το αρχείο `app.py`.
+2. Τρέξτε το αρχείο "app.py".
 >>>>>>> 436897e (Final project files submission)
+
