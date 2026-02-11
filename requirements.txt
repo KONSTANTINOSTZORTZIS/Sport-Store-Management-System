@@ -1,0 +1,4 @@
+# Requirements for Sport Store Management System
+# Built-in libraries used: tkinter, sqlite3, os
+# No external pip installations required.
+python>=3.10
