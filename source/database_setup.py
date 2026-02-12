@@ -14,7 +14,7 @@ def setup_database():
     cursor.execute("DROP TABLE IF EXISTS salespeople")
     cursor.execute("DROP TABLE IF EXISTS stores")
 
-    # 1. Πίνακας Stores [cite: 111, 112]
+    # 1. Πίνακας Stores 
     cursor.execute("""CREATE TABLE stores (
         id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
@@ -23,7 +23,7 @@ def setup_database():
         phone TEXT
     )""")
 
-    # 2. Πίνακας Salespeople [cite: 114, 115]
+    # 2. Πίνακας Salespeople 
     cursor.execute("""CREATE TABLE salespeople (
         id INTEGER PRIMARY KEY,
         full_name TEXT NOT NULL,
@@ -36,7 +36,7 @@ def setup_database():
         FOREIGN KEY (store_id) REFERENCES stores(id)
     )""")
 
-    # 3. Πίνακας Customers [cite: 117, 118]
+    # 3. Πίνακας Customers 
     cursor.execute("""CREATE TABLE customers (
         id INTEGER PRIMARY KEY,
         full_name TEXT NOT NULL,
@@ -49,7 +49,7 @@ def setup_database():
         FOREIGN KEY (salesperson_id) REFERENCES salespeople(id)
     )""")
 
-    # 4. Πίνακας Teams [cite: 120, 121, 122]
+    # 4. Πίνακας Teams 
     cursor.execute("""CREATE TABLE teams (
         id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
@@ -59,7 +59,7 @@ def setup_database():
         FOREIGN KEY (representative_customer_id) REFERENCES customers(id)
     )""")
 
-    # 5. Πίνακας Products [cite: 123, 124]
+    # 5. Πίνακας Products 
     cursor.execute("""CREATE TABLE products (
         id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
@@ -72,7 +72,7 @@ def setup_database():
         FOREIGN KEY (store_id) REFERENCES stores(id)
     )""")
 
-    # 6. Πίνακας Orders [cite: 126]
+    # 6. Πίνακας Orders 
     cursor.execute("""CREATE TABLE orders (
         id INTEGER PRIMARY KEY,
         order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -82,7 +82,7 @@ def setup_database():
         FOREIGN KEY (customer_id) REFERENCES customers(id)
     )""")
 
-    # 7. Πίνακας Order Items [cite: 127, 128, 129]
+    # 7. Πίνακας Order Items 
     cursor.execute("""CREATE TABLE order_items (
         order_id INTEGER,
         product_id INTEGER,
@@ -97,7 +97,7 @@ def setup_database():
     # Stores
     cursor.execute("INSERT INTO stores VALUES (1, 'Sport Store Corfu', 'Γ. Θεοτόκη 15', '09:00-21:00', '2661012345')")
 
-    # Salespeople [cite: 115]
+    # Salespeople 
     sales_data = [
         (1, 'Νίκος Παπαδόπουλος', 'Πατησίων 50', '2101234567', 'nikos@sports.gr', 0.10, 150.0, 1),
         (2, 'Άννα Παππά', 'Πανεπιστημίου 10', '2107654321', 'anna@sports.gr', 0.12, 300.0, 1),
@@ -105,7 +105,7 @@ def setup_database():
     ]
     cursor.executemany("INSERT INTO salespeople VALUES (?,?,?,?,?,?,?,?)", sales_data)
 
-    # Customers [cite: 118]
+    # Customers 
     cust_data = [
         (1, 'Γιώργος Γεωργίου', 'Κανόνι', 'Liverpool', '6987778888', 'george@mail.com', 0.0, 1),
         (2, 'Μαρία Οικονόμου', 'Σολωμού 4', 'Starford', '6944445555', 'maria@mail.com', 120.0, 2),
@@ -115,14 +115,14 @@ def setup_database():
     ]
     cursor.executemany("INSERT INTO customers VALUES (?,?,?,?,?,?,?,?)", cust_data)
 
-    # Teams [cite: 121]
+    # Teams 
     teams_data = [
         (1, 'Κεραυνός FC', 22, 0.15, 1),
         (2, 'Αετός Κέρκυρας', 18, 0.10, 4)
     ]
     cursor.executemany("INSERT INTO teams VALUES (?,?,?,?,?)", teams_data)
 
-    # Products [cite: 123]
+    # Products 
     prod_data = [
         (1, 'Αθλητικές Κάλτσες', 'Κάλτσες προπόνησης', 5.50, 2.00, 'Ένδυση', 100, 1),
         (2, 'Μπάλα Ποδοσφαίρου', 'FIFA Quality 1', 45.00, 25.00, 'Εξοπλισμός', 50, 1),
