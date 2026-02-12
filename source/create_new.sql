@@ -1,5 +1,5 @@
 -- Δημιουργία Πινάκων για SQLite (Schema)
--- Βασισμένο στις οντότητες του Μέρους Α [cite: 110]
+-- Βασισμένο στις οντότητες του Μέρους Α 
 
 CREATE TABLE stores (
     id INTEGER PRIMARY KEY,
