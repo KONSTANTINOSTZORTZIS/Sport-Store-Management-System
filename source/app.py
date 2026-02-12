@@ -10,7 +10,7 @@ def init_db():
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     if not db_exists:
-        # Δημιουργία Πινάκων βάσει του σχεδιασμού [cite: 110, 112, 115, 118, 121, 123, 126]
+        # Δημιουργία Πινάκων βάσει του σχεδιασμού 
         cursor.execute("CREATE TABLE stores (id INTEGER PRIMARY KEY, name TEXT, address TEXT, phone TEXT)")
         cursor.execute("CREATE TABLE salespeople (id INTEGER PRIMARY KEY, full_name TEXT, email TEXT, store_id INTEGER, FOREIGN KEY(store_id) REFERENCES stores(id))")
         cursor.execute("CREATE TABLE customers (id INTEGER PRIMARY KEY AUTOINCREMENT, full_name TEXT, email TEXT UNIQUE, phone TEXT, city TEXT, salesperson_id INTEGER, FOREIGN KEY(salesperson_id) REFERENCES salespeople(id))")
@@ -61,7 +61,7 @@ def save_entry(table, cols, vals):
     except Exception as e:
         messagebox.showerror("Σφάλμα", f"Αποτυχία εισαγωγής: {e}")
 
-# --- 3. ΕΚΤΕΛΕΣΗ ΕΡΩΤΗΣΕΩΝ [cite: 17] ---
+# --- 3. ΕΚΤΕΛΕΣΗ ΕΡΩΤΗΣΕΩΝ  ---
 def run_query(n):
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -91,7 +91,7 @@ init_db()
 root = tk.Tk(); root.title("Εφαρμογή Φοιτητολογίου - Ομάδα 99"); root.geometry("1000x800")
 nb = ttk.Notebook(root); nb.pack(expand=True, fill="both")
 
-# ΚΑΡΤΕΛΑ: ΠΕΛΑΤΕΣ [cite: 14]
+# ΚΑΡΤΕΛΑ: ΠΕΛΑΤΕΣ 
 t_c = ttk.Frame(nb); nb.add(t_c, text=" Πελάτες ")
 tk.Label(t_c, text="Όνομα:").grid(row=0, column=0); en_c_n = tk.Entry(t_c); en_c_n.grid(row=0, column=1)
 tk.Label(t_c, text="Email:").grid(row=1, column=0); en_c_e = tk.Entry(t_c); en_c_e.grid(row=1, column=1)
@@ -100,21 +100,21 @@ tk.Label(t_c, text="Πωλητής (Dropdown):").grid(row=3, column=0)
 cb_c_sales = ttk.Combobox(t_c); cb_c_sales.grid(row=3, column=1)
 tk.Button(t_c, text="Αποθήκευση", command=lambda: save_entry("customers", ["full_name","email","city","salesperson_id"], [en_c_n.get(), en_c_e.get(), en_c_t.get(), cb_c_sales.get().split(" - ")[0]])).grid(row=4, column=1)
 
-# ΚΑΡΤΕΛΑ: ΠΡΟΪΟΝΤΑ [cite: 14]
+# ΚΑΡΤΕΛΑ: ΠΡΟΪΟΝΤΑ 
 t_p = ttk.Frame(nb); nb.add(t_p, text=" Προϊόντα ")
 tk.Label(t_p, text="Όνομα:").grid(row=0, column=0); en_p_n = tk.Entry(t_p); en_p_n.grid(row=0, column=1)
 tk.Label(t_p, text="Τιμή:").grid(row=1, column=0); en_p_s = tk.Entry(t_p); en_p_s.grid(row=1, column=1)
 tk.Label(t_p, text="Κατηγορία:").grid(row=2, column=0); en_p_c = tk.Entry(t_p); en_p_c.grid(row=2, column=1)
 tk.Button(t_p, text="Αποθήκευση", command=lambda: save_entry("products", ["name","sales_price","category"], [en_p_n.get(), en_p_s.get(), en_p_c.get()])).grid(row=3, column=1)
 
-# ΚΑΡΤΕΛΑ: ΠΑΡΑΓΓΕΛΙΕΣ [cite: 14]
+# ΚΑΡΤΕΛΑ: ΠΑΡΑΓΓΕΛΙΕΣ 
 t_o = ttk.Frame(nb); nb.add(t_o, text=" Παραγγελίες ")
 tk.Label(t_o, text="Πελάτης (Dropdown):").grid(row=0, column=0)
 cb_o_cust = ttk.Combobox(t_o); cb_o_cust.grid(row=0, column=1)
 tk.Label(t_o, text="Ποσό:").grid(row=1, column=0); en_o_a = tk.Entry(t_o); en_o_a.grid(row=1, column=1)
 tk.Button(t_o, text="Αποθήκευση", command=lambda: save_entry("orders", ["customer_id","total_amount"], [cb_o_cust.get().split(" - ")[0], en_o_a.get()])).grid(row=2, column=1)
 
-# ΚΑΡΤΕΛΑ: ΕΡΩΤΗΣΕΙΣ [cite: 17]
+# ΚΑΡΤΕΛΑ: ΕΡΩΤΗΣΕΙΣ 
 t_q = ttk.Frame(nb); nb.add(t_q, text=" Αναζητήσεις ")
 f_s = tk.Frame(t_q); f_s.pack(pady=10)
 tk.Label(f_s, text="Αναζήτηση (ID ή Όνομα):").pack(side="left"); entry_query = tk.Entry(f_s); entry_query.pack(side="left", padx=5)
