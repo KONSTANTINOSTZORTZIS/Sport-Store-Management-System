@@ -32,12 +32,12 @@ Sport Store Management System | A standalone desktop application built with Pyth
 
 3. **Αρχικοποίηση Βάσης Δεδομένων** (Πρώτη Φορά)
    
- 1. Πλοήγηση στον κατάλογο Source
+   i. Πλοήγηση στον κατάλογο Source
    Αφού αποσυμπιέσετε το αρχείο ZIP, εισέλθετε στον φάκελο που περιέχει τον κώδικα **(source)** και με δεξί κλικ ανοίξτε το τερματικό σας (PowerShell ή Command Prompt) 
 
    Σημείωση: Αν χρησιμοποιείτε VS Code, επιλέξτε File > Open Folder και ανοίξτε απευθείας τον φάκελο source.
 
- 2. Προετοιμασία Βάσης Δεδομένων
+   ii. Προετοιμασία Βάσης Δεδομένων
    Πριν την πρώτη εκτέλεση της εφαρμογής, πρέπει να δημιουργηθεί η βάση δεδομένων και να φορτωθούν τα αρχικά δεδομένα. Εκτελέστε την εντολή:
 
    Bash
@@ -48,5 +48,6 @@ Sport Store Management System | A standalone desktop application built with Pyth
 
 Bash
 python app.py
+
 
 
