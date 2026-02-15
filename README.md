@@ -18,7 +18,6 @@ Sport Store Management System | A standalone desktop application built with Pyth
 1. Λήψη Αρχείων
 Κατεβάστε και αποσυμπιέστε το project. Βεβαιωθείτε ότι ο φάκελος περιλαμβάνει τα εξής απαραίτητα αρχεία:
 
-
 app.py: Η κύρια εφαρμογή.
 
 database_setup.py: Το script αρχικοποίησης της βάσης.
@@ -43,5 +42,6 @@ python database_setup.py
 
 Bash
 python app.py
+
 
 
